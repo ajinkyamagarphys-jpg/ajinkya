@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
         phoneInput.addEventListener('input', function() {
             var digits = this.value.replace(/\D/g, '').slice(0, 10);
             this.value = digits;
+            // Clear any custom validity when user types
+            this.setCustomValidity('');
+        });
+        
+        // Also clear validity on blur to ensure clean state
+        phoneInput.addEventListener('blur', function() {
+            if (this.value.length === 10 && /^\d{10}$/.test(this.value)) {
+                this.setCustomValidity('');
+            }
         });
     }
 
@@ -102,14 +111,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Registration'; }
             return;
         }
-        var phoneOk = /^\d{10}$/.test(payload.phone);
-        if (!phoneOk) {
-            document.getElementById('phone').setCustomValidity('Enter a valid phone number');
+        // Clean phone number - remove any non-digits and ensure it's exactly 10 digits
+        var cleanPhone = payload.phone.replace(/\D/g, '');
+        if (cleanPhone.length !== 10) {
+            document.getElementById('phone').setCustomValidity('Phone must be exactly 10 digits');
             document.getElementById('phone').reportValidity();
             showToast('Phone must be exactly 10 digits', 'error');
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Registration'; }
             return;
         }
+        // Update payload with cleaned phone
+        payload.phone = cleanPhone;
         // clear custom validity
         document.getElementById('email').setCustomValidity('');
         document.getElementById('phone').setCustomValidity('');
