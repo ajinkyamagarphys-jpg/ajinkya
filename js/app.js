@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenu = document.createElement('div');
                 mobileMenu.id = 'mobile-menu';
                 mobileMenu.className = 'md:hidden bg-black/90 backdrop-blur-md border-b border-emerald-400/20';
-                mobileMenu.innerHTML = '\n                <div class="container mx-auto px-6 py-4 flex flex-col gap-4">\n                    <a href="#events" class="text-gray-300 hover:text-emerald-400 transition-colors">Events</a>\n                    <a href="Registration.html" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-full transition-all duration-300 w-max">Login</a>\n                </div>\n                ';
+                mobileMenu.innerHTML = '\n                <div class="container mx-auto px-6 py-4 flex flex-col gap-4">\n                    <a href="#events" class="text-gray-300 hover:text-emerald-400 transition-colors">Events</a>\n                    <button disabled class="px-4 py-2 bg-emerald-500 text-black font-bold rounded-full cursor-not-allowed opacity-75 w-max">Login</button>\n                </div>\n                ';
                 header.insertAdjacentElement('afterend', mobileMenu);
             }
             var isHidden = mobileMenu.style.display === 'none' || !mobileMenu.style.display;
