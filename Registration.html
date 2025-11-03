@@ -3,12 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeekForGeeks</title>
+    <title>Register | GeekforGeeks Club MITAOE</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
-<body>
-    <h1> This Site is Under Maintence for registration</h1>
-    
-    <script src="script.js"></script>
+<body class="bg-black text-gray-100 font-['Poppins']">
+    <!-- Header with Glassmorphism Effect -->
+    <header class="fixed w-full z-50 backdrop-blur-md bg-black/50 border-b border-emerald-400/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-emerald-400">
+                    GeekforGeeks
+                </div>
+                <a href="index.html" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20">
+        <div id="particles-js" class="absolute inset-0"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Event Banner -->
+            <div class="max-w-4xl mx-auto mb-16 bg-gray-800/20 backdrop-blur-lg rounded-xl p-8 border border-gray-700/50 hover:border-emerald-400 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
+                <h1 id="event-title" class="text-4xl font-bold mb-4 text-emerald-400">GFG X NOVA</h1>
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center text-emerald-400 font-['JetBrains_Mono']">
+                        <i data-feather="calendar" class="w-5 h-5 mr-2"></i>
+                        <span id="event-date">12 NOV 2025</span>
+                    </div>
+                    <div class="flex items-center text-emerald-400 font-['JetBrains_Mono']">
+                        <!-- <i data-feather="clock" class="w-5 h-5 mr-2"></i> -->
+                        <!-- <span id="event-time">10:00 AM - 6:00 PM</span> -->
+                    </div>
+                </div>
+                <p id="event-desc" class="text-gray-300 mb-6">Join us for the Competitive Coding Contest, organized by GeeksforGeeks x NOVA, where brilliant minds compete to crack algorithmic puzzles, debug complex code, and climb the leaderboard.
+                      <br>  <br>
+                   <h2> 👾 Highlights:</h2> 
+                        <br>
+1. Real-world coding problems
+<br><br>
+2. Individual participation
+<br><br>
+3. Certificates & prizes for top performers
+<br><br>
+<!-- 📅 Date: 12 NOV 2025<br> -->
+📍 Venue: MIT AOE <br> </p>
+<br></p>
+                <!-- <div class="flex items-center gap-2 text-emerald-400">
+                    <i data-feather="alert-circle" class="w-5 h-5"></i>
+                    <span id="countdown" class="font-['JetBrains_Mono']">Event starts in 5 days, 12 hours</span>
+                </div>
+            </div> -->
+
+            <!-- Registration Form -->
+            <div class="max-w-2xl mx-auto bg-gray-800/20 backdrop-blur-lg rounded-xl p-8 border border-gray-700/50">
+                <h2 class="text-3xl font-bold mb-8 text-emerald-400">Registration Form</h2>
+                <form id="registration-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-gray-300">Full Name</label>
+                        <input type="text" id="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-gray-300">Email</label>
+                        <input type="email" id="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500">
+                    </div>
+                    <div>
+                        <label for="roll" class="block mb-2 text-gray-300">PRN </label>
+                        <input type="text" id="roll" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="department" class="block mb-2 text-gray-300">Department</label>
+                            <select id="department" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors">
+                                <option value="">Select Department</option>
+                                <option value="CS">Computer Science</option>
+                                <option value="CSE">Software Engineering</option>
+                                <option value="AIML">Artificial Intelligence and Machine Learning</option>
+                                <option value="DS">Data Science</option>
+                                <option value="IT">Information Technology</option>
+                                <option value="ENTC">Electronics</option>
+                                <option value="MECH">Mechanical</option>
+                                <option value="CIVIL">Civil</option>
+                                <option value="CHEM">Chemical</option>
+
+                            </select>
+                        </div>
+                        <div>
+                            <label for="year" class="block mb-2 text-gray-300">Year</label>
+                            <select id="year" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors">
+                                <option value="">Select Year</option>
+                                <option value="FE">First Year</option>
+                                <option value="SE">Second Year</option>
+                                <option value="TE">Third Year</option>
+                                <option value="BE">Final Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phone" class="block mb-2 text-gray-300">Phone Number</label>
+                        <input type="tel" id="phone" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500">
+                    </div>
+                    <div>
+                        <label for="upi" class="block mb-2 text-gray-300">UPI ID (Optional)</label>
+                        <input type="text" id="upi" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500">
+                    </div>
+
+                    <!-- Payment Section -->
+                    <div class="mt-10 pt-6 border-t border-gray-700/50">
+                        <h3 class="text-xl font-bold mb-4 text-emerald-400">Complete Payment to Confirm Registration</h3>
+                        <div class="bg-gray-800/50 rounded-lg p-6 mb-6 flex flex-col items-center">
+                            <img src="http://static.photos/technology/320x240/42" alt="Payment QR Code" class="w-48 h-48 mb-4 rounded-lg border border-emerald-400/30">
+                            <p class="text-gray-300 text-center mb-4">Scan the QR using PhonePe / GPay</p>
+                            <p class="text-emerald-400 font-['JetBrains_Mono'] text-center">Amount: ₹100</p>
+                        </div>
+                        <div>
+                            <label for="transaction" class="block mb-2 text-gray-300">Transaction ID</label>
+                            <input type="text" id="transaction" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500">
+                            <p class="text-sm text-gray-400 mt-2">You'll receive a confirmation email once verified.</p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Submit Registration
+                    </button>
+                </form>
+
+                <!-- Success Message (hidden initially) -->
+                <div id="success-message" class="hidden text-center py-10">
+                    <div class="text-6xl mb-6">🎉</div>
+                    <h3 class="text-3xl font-bold mb-4 text-emerald-400">Registration Successful!</h3>
+                    <p class="text-xl mb-8">Your details have been recorded. We'll contact you soon.</p>
+                    <a href="index.html" class="inline-block px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 backdrop-blur-md border-t border-emerald-400/20 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">Made with <span class="text-emerald-400">💚</span> by GeekforGeeks Club MITAOE Team</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-emerald-400 transition-colors">
+                        <i data-feather="instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-emerald-400 transition-colors">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-emerald-400 transition-colors">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize feather icons
+        feather.replace();
+        
+        // Initialize particles.js
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles loaded...');
+        });
+
+        // Parse URL parameters to get event details
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const event = urlParams.get('event');
+            
+            // Update event details based on URL param
+            if (event) {
+                document.getElementById('event-title').textContent = decodeURIComponent(event);
+                // Here you would typically fetch event details from an API
+            }
+
+            // Form submission
+            document.getElementById('registration-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    document.getElementById('registration-form').classList.add('hidden');
+                    document.getElementById('success-message').classList.remove('hidden');
+                }, 1000);
+            });
+
+            // Countdown timer (example)
+            const eventDate = new Date();
+            eventDate.setDate(eventDate.getDate() + 5); // 5 days from now
+            updateCountdown();
+            
+            function updateCountdown() {
+                const now = new Date();
+                const diff = eventDate - now;
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                
+                document.getElementById('countdown').textContent = 
+                    `Event starts in ${days} days, ${hours} hours`;
+                
+                setTimeout(updateCountdown, 3600000); // Update every hour
+            }
+        });
+    </script>
 </body>
 </html>
