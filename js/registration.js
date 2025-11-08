@@ -224,7 +224,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     var ext = '';
                     var nameParts = (file.name || '').split('.');
                     if (nameParts.length > 1) ext = '.' + nameParts.pop();
-                    var filePath = 'registrations/' + safeId + '-' + Date.now() + ext;
+                    var fName = payload.name.trim().split(/\s+/)[0];
+                    var filePath = 'registrations/' + safeId + '-' + fName + ext;
 
                     // Upload to the configured bucket
                     var uploadRes = await window.supabaseClient.storage
