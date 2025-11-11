@@ -152,7 +152,25 @@
                         <p class="text-gray-300 text-sm">Use these credentials to login on the contest platform</p>
                     </div>
                     
-                    <div class="bg-gray-800/50 rounded-lg p-4 sm:p-5 mb-5 space-y-3">
+                    <!-- User Information -->
+                    <div class="bg-gray-800/30 rounded-lg p-4 sm:p-5 mb-4 border border-gray-700/50">
+                        <p class="text-gray-400 text-xs mb-3 uppercase tracking-wider">Your Details</p>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-400 text-sm">GFG ID:</span>
+                                <span id="contest-gfgid" class="text-gray-200 font-['JetBrains_Mono'] text-sm sm:text-base"></span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-400 text-sm">Email:</span>
+                                <span id="contest-email" class="text-gray-200 font-['JetBrains_Mono'] text-sm sm:text-base break-all"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Verification Details -->
+                    <div class="bg-gray-800/50 rounded-lg p-4 sm:p-5 mb-5 space-y-3 border border-emerald-400/20">
+                        <p class="text-emerald-400 text-xs mb-3 uppercase tracking-wider font-semibold">Your Verification Details</p>
+                        <p class="text-gray-400 text-xs mb-3">Use your GFG email and password to login to the contest</p>
                         <div class="flex items-center justify-between p-3 bg-gray-900/50 rounded border border-gray-700">
                             <span class="text-gray-400 text-sm">Username:</span>
                             <span id="contest-username" class="text-emerald-400 font-['JetBrains_Mono'] font-bold text-base sm:text-lg"></span>

@@ -2,7 +2,7 @@
 // TIME MANAGEMENT (IST Timezone)
 // ============================================
 var REGISTRATION_CLOSE_TIME = new Date('2025-11-12T00:00:00+05:30'); // Nov 12, 12:00 AM IST
-var CONTEST_START_TIME = new Date('2025-11-12T15:20:00+05:30'); // Nov 12, 3:20 PM IST
+var CONTEST_START_TIME = new Date('2025-11-11T15:20:00+05:30'); // Nov 12, 3:20 PM IST
 
 function getCurrentISTTime() {
     // Get current time and convert to IST
@@ -167,7 +167,7 @@ async function validateAndShowContest(prn, password) {
         // Fetch user's registration data
         var result = await window.supabaseClient
             .from('registrations')
-            .select('gfg_id')
+            .select('gfg_id, email')
             .eq('prn', prn)
             .eq('event_name', 'GFG X NOVA')
             .maybeSingle();
@@ -178,6 +178,7 @@ async function validateAndShowContest(prn, password) {
         }
         
         var gfgId = result.data.gfg_id;
+        var email = result.data.email;
         if (!gfgId || gfgId.length < 3) {
             showToast('Invalid GFG ID in registration. Please contact support.', 'error');
             return;
@@ -192,7 +193,7 @@ async function validateAndShowContest(prn, password) {
         }
         
         // Credentials valid - show contest details
-        showContestDetails(prn, expectedPassword);
+        showContestDetails(prn, expectedPassword, gfgId, email);
         
     } catch (err) {
         console.error(err);
@@ -200,7 +201,7 @@ async function validateAndShowContest(prn, password) {
     }
 }
 
-function showContestDetails(username, password) {
+function showContestDetails(username, password, gfgId, email) {
     var loginSection = document.getElementById('login-section');
     var contestSection = document.getElementById('contest-section');
     
@@ -211,10 +212,14 @@ function showContestDetails(username, password) {
         // Inject credentials (not in HTML source)
         var usernameEl = document.getElementById('contest-username');
         var passwordEl = document.getElementById('contest-password');
+        var gfgIdEl = document.getElementById('contest-gfgid');
+        var emailEl = document.getElementById('contest-email');
         var linkEl = document.getElementById('contest-link');
         
         if (usernameEl) usernameEl.textContent = username;
         if (passwordEl) passwordEl.textContent = password;
+        if (gfgIdEl) gfgIdEl.textContent = gfgId;
+        if (emailEl) emailEl.textContent = email;
         if (linkEl) {
             linkEl.href = 'https://practice.geeksforgeeks.org/contest/codearena-mitaoe-gfg-x-nova';
             linkEl.textContent = 'Open Contest';
