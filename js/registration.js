@@ -2,7 +2,7 @@
 // TIME MANAGEMENT (IST Timezone)
 // ============================================
 var REGISTRATION_CLOSE_TIME = new Date('2025-11-12T00:00:00+05:30'); // Nov 12, 12:00 AM IST
-var CONTEST_START_TIME = new Date('2025-11-12T15:20:00+05:30'); // Nov 12, 3:20 PM IST
+var CONTEST_START_TIME = new Date('2025-11-12T16:00:00+05:30'); // Nov 12, 3:20 PM IST
 
 function getCurrentISTTime() {
     // Get current time and convert to IST
