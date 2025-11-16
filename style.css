@@ -1,4 +1,427 @@
-/* Mobile robustness + safe-area support */
+/* Globe Container - Centered with Text Overlay */
+#globe-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(0, 255, 136, 0.3),
+                0 0 100px rgba(0, 255, 136, 0.2);
+}
+
+/* Globe Text Overlay - Where Logic Meets Creativity */
+#globe-container::after {
+    content: 'Where Logic Meets Creativity';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(0, 255, 136, 0.4);
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.5),
+                 0 0 30px rgba(0, 255, 136, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+    z-index: 15;
+    pointer-events: none;
+    animation: textGlow 4s ease-in-out infinite alternate;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+@keyframes textGlow {
+    from {
+        opacity: 0.4;
+        text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+    }
+    to {
+        opacity: 0.7;
+        text-shadow: 0 0 25px rgba(0, 255, 136, 0.6),
+                     0 0 50px rgba(0, 255, 136, 0.4);
+    }
+}
+
+@media (max-width: 768px) {
+    #globe-container {
+        width: 350px;
+        height: 350px;
+    }
+    #globe-container::after {
+        font-size: 1rem;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    #globe-container {
+        width: 280px;
+        height: 280px;
+    }
+    #globe-container::after {
+        font-size: 0.9rem;
+        max-width: 120px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* GFG Text Overlay on Globe */
+#globe-container::after {
+    content: 'GFG';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(0, 255, 136, 0.3);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.5),
+                 0 0 40px rgba(0, 255, 136, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 6px;
+    z-index: 15;
+    pointer-events: none;
+    animation: gfgGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes gfgGlow {
+    from {
+        opacity: 0.3;
+        text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    }
+    to {
+        opacity: 0.6;
+        text-shadow: 0 0 30px rgba(0, 255, 136, 0.6),
+                     0 0 60px rgba(0, 255, 136, 0.4);
+    }
+}
+
+@media (max-width: 768px) {
+    #globe-container {
+        width: 300px;
+        height: 300px;
+        order: 2;
+    }
+    #globe-container::after {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    #globe-container {
+        width: 250px;
+        height: 250px;
+    }
+    #globe-container::after {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+}
+
+#globe-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Hero Section - Centered Globe Layout with Stars */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 100px 2rem 2rem;
+}
+
+/* Starry Background */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 160px 30px, #fff, transparent),
+        radial-gradient(1px 1px at 200px 90px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 250px 50px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 300px 20px, #fff, transparent),
+        radial-gradient(1px 1px at 350px 100px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(2px 2px at 400px 60px, rgba(255,255,255,0.6), transparent);
+    background-repeat: repeat;
+    background-size: 500px 300px;
+    animation: twinkle 4s ease-in-out infinite alternate;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.8; }
+}
+
+/* Remove the pseudo element */
+
+.hero-section .magicpattern {
+    z-index: 2; /* Subtle pattern over black */
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.3;
+}
+
+.hero-section #particles-js {
+    z-index: 3; /* Above pattern, below globe */
+}
+
+.hero-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    z-index: 5;
+    position: relative;
+}
+
+/* Draggable Logo Section */
+.logo-section {
+    position: fixed;
+    top: calc(50% - 30px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1100;
+    cursor: move;
+    user-select: none;
+}
+
+.logo-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.logo-container:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+}
+
+.logo-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #00ff88;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.8),
+                0 0 60px rgba(0, 255, 136, 0.5);
+    transition: all 0.3s ease;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo-container:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 255, 136, 1),
+                0 0 80px rgba(0, 255, 136, 0.8);
+}
+
+/* Circular Menu for Logo Click */
+.logo-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+}
+
+.logo-menu.active {
+    pointer-events: auto;
+}
+
+/* Shooting Animation Styles */
+.logo-menu-item {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ff88;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00ff88;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo-menu-item.shooting {
+    animation: shootOut 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.logo-menu-item.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.3s ease 0.2s;
+}
+
+.logo-menu-item:hover {
+    background: #00ff88;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+/* Shooting animation keyframes - maintains positioning */
+@keyframes shootOut {
+    0% {
+        opacity: 0;
+        filter: blur(2px);
+    }
+    30% {
+        opacity: 0.8;
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+        filter: blur(0);
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+    }
+}
+
+/* Shooting trail effect */
+.logo-menu-item.shooting::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #00ff88;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: shootTrail 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes shootTrail {
+    0% {
+        width: 4px;
+        height: 4px;
+        box-shadow: 0 0 10px rgba(0, 255, 136, 1);
+    }
+    50% {
+        width: 8px;
+        height: 8px;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+    }
+    100% {
+        width: 2px;
+        height: 2px;
+        box-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+    }
+}
+
+/* Logo Menu Clock Positions - Perfect 12, 3, 6, 9 Symmetry */
+.logo-menu-item:nth-child(1) { /* 12 o'clock - Events */
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-menu-item:nth-child(2) { /* 3 o'clock - Achievements */
+    top: 50%;
+    right: -150px;
+    transform: translateY(-50%);
+}
+
+.logo-menu-item:nth-child(3) { /* 6 o'clock - Contact Us */
+    bottom: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-menu-item:nth-child(4) { /* 9 o'clock - Our Team */
+    top: 50%;
+    left: -150px;
+    transform: translateY(-50%);
+}
+
+/* Hover effect that maintains position */
+.logo-menu-item:nth-child(1):hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+.logo-menu-item:nth-child(2):hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.logo-menu-item:nth-child(3):hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+.logo-menu-item:nth-child(4):hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Remove tagline section - text now in globe */
+
+.tagline::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ff88, #00d4aa, #00b894, #00ff88);
+    background-size: 200% 200%;
+    border-radius: 25px;
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes taglinePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@media (max-width: 768px) {
+    .tagline {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+}
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -29,10 +452,14 @@ header .container > div > * {
 
 /* Particles background should never force horizontal scroll */
 #particles-js {
-  width: 100vw;
-  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   pointer-events: none;
+  z-index: 3;
 }
 
 /* Prevent hover scale causing layout shift on small screens */

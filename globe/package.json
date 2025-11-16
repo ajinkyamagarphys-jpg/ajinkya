@@ -1,0 +1,22 @@
+{
+  "name": "interactive-globe",
+  "version": "1.0.0",
+  "description": "3D Interactive Globe with Data Flow Animation - React Component",
+  "main": "Globe.jsx",
+  "dependencies": {
+    "react": "^19.2.0",
+    "three": "^0.162.0",
+    "topojson-client": "^3.1.0"
+  },
+  "keywords": [
+    "react",
+    "threejs",
+    "globe",
+    "3d",
+    "visualization",
+    "data-flow",
+    "animation"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
