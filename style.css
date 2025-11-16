@@ -345,26 +345,26 @@
 
 /* Logo Menu Clock Positions - Perfect 12, 3, 6, 9 Symmetry */
 .logo-menu-item:nth-child(1) { /* 12 o'clock - Events */
-    top: -90px;
+    top: -203px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .logo-menu-item:nth-child(2) { /* 3 o'clock - Achievements */
     top: 50%;
-    right: -150px;
+    right: -280px;
     transform: translateY(-50%);
 }
 
 .logo-menu-item:nth-child(3) { /* 6 o'clock - Contact Us */
-    bottom: -90px;
+    bottom: -190px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .logo-menu-item:nth-child(4) { /* 9 o'clock - Our Team */
     top: 50%;
-    left: -150px;
+    left: -280px;
     transform: translateY(-50%);
 }
 
