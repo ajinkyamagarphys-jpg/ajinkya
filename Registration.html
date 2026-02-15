@@ -41,22 +41,22 @@
         <div class="container mx-auto px-6 relative z-10">
             <!-- Event Banner -->
             <div class="max-w-4xl mx-auto mb-8 sm:mb-16 bg-gray-800/20 backdrop-blur-lg rounded-xl p-4 sm:p-8 border border-gray-700/50 hover:border-emerald-400 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
-                <h1 id="event-title" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-emerald-400">GFG X NOVA</h1>
+                <h1 id="event-title" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-emerald-400">GFG Guest Session</h1>
                 <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                     <div class="flex items-center text-emerald-400 font-['JetBrains_Mono'] text-sm sm:text-base">
                         <i data-feather="calendar" class="w-4 h-4 sm:w-5 sm:h-5 mr-2"></i>
-                        <span id="event-date">12 NOV 2025</span>
+                        <span id="event-date">19 FEB 2026</span>
                     </div>
                 </div>
                 <div id="event-desc" class="text-gray-300 text-sm sm:text-base">
-                    <p class="mb-4">Join us for the Competitive Coding Contest, organized by GeeksforGeeks x NOVA, where brilliant minds compete to crack algorithmic puzzles, debug complex code, and climb the leaderboard.</p>
+                    <p class="mb-4">Understand What Generative AI is at a Basic Level, and its appropriate usage on a daily and professional level.</p>
                     <h2 class="font-semibold mb-2">👾 Highlights:</h2>
                     <ul class="list-disc list-inside space-y-1 ml-2 mb-4">
-                        <li>Real-world coding problems</li>
-                        <li>Individual participation</li>
-                        <li>Certificates & prizes for top performers</li>
+                        <li>Introduction to Generative AI fundamentals</li>
+                        <li>Practical applications in daily and professional work</li>
+                        <li>Best practices and ethical usage</li>
                     </ul>
-                    <p>📍 Venue: MIT AOE</p>
+                    <p>🎤 Speaker: <a href="https://mansimore.dev/" target="_blank" class="text-emerald-400 hover:text-emerald-300 underline">Mansi More</a><br>📍 Mode: Online</p>
                 </div>
                 <!-- <div class="flex items-center gap-2 text-emerald-400">
                     <i data-feather="alert-circle" class="w-5 h-5"></i>
@@ -65,7 +65,7 @@
             </div> -->
 
             <!-- Registration Closed Message (made visible when registrations are closed) -->
-            <div id="closed-section" class="max-w-2xl mx-auto mb-8 bg-gray-800/20 backdrop-blur-lg rounded-xl p-6 sm:p-10 border border-red-500/30 text-center">
+            <div id="closed-section" class="hidden max-w-2xl mx-auto mb-8 bg-gray-800/20 backdrop-blur-lg rounded-xl p-6 sm:p-10 border border-red-500/30 text-center">
                 <div class="text-5xl sm:text-6xl mb-4">🔒</div>
                 <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-red-400">Registrations Closed</h2>
                 <p class="text-gray-300 text-base sm:text-lg mb-2">Registrations for this event are closed now.</p>
@@ -203,8 +203,8 @@
                 </div>
             </div>
 
-            <!-- Registration Form (disabled/hidden because registrations are closed) -->
-            <div id="registration-section" class="hidden max-w-2xl mx-auto bg-gray-800/20 backdrop-blur-lg rounded-xl p-4 sm:p-8 border border-gray-700/50">
+            <!-- Registration Form (Live event) -->
+            <div id="registration-section" class="max-w-2xl mx-auto bg-gray-800/20 backdrop-blur-lg rounded-xl p-4 sm:p-8 border border-gray-700/50">
                 <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-emerald-400">Registration Form</h2>
                 <form id="registration-form" class="space-y-4 sm:space-y-6">
                     <div>
@@ -255,52 +255,12 @@
                             </select>
                         </div>
                     </div>
-                    <!-- Bring Own Laptop -->
-                    <div>
-                        <label class="block mb-2 text-gray-300 text-sm sm:text-base">Will you bring your own laptop?</label>
-                        <div class="flex items-center gap-4 sm:gap-6">
-                            <label class="inline-flex items-center gap-2 text-sm sm:text-base">
-                                <input type="radio" name="bring_laptop" id="bring-laptop-yes" value="yes" required class="text-emerald-500">
-                                <span>Yes</span>
-                            </label>
-                            <label class="inline-flex items-center gap-2 text-sm sm:text-base">
-                                <input type="radio" name="bring_laptop" id="bring-laptop-no" value="no" class="text-emerald-500">
-                                <span>No</span>
-                            </label>
-                        </div>
-                        <p class="text-xs sm:text-sm text-emerald-300 mt-2 font-['JetBrains_Mono']">Note: Once your choices are submitted, they cannot be changed later.</p>
-                    </div>
                     <div>
                         <label for="phone" class="block mb-2 text-gray-300 text-sm sm:text-base">Phone Number </label>
                         <input type="tel" id="phone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10-digit number" class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500 text-sm sm:text-base">
                     </div>
-                    <div>
-                        <label for="upi" class="block mb-2 text-gray-300 text-sm sm:text-base">UPI ID  </label>
-                        <input type="text" id="upi" class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500 text-sm sm:text-base">
-                    </div>
-
-                    <!-- Payment Section -->
-                    <div class="mt-6 sm:mt-10 pt-6 border-t border-gray-700/50">
-                        <h3 class="text-lg sm:text-xl font-bold mb-4 text-emerald-400">Complete Payment to Confirm Registration</h3>
-                        <div class="bg-gray-800/50 rounded-lg p-4 sm:p-6 mb-6 flex flex-col items-center">
-                            <img src="assets/qr-code.png" alt="Payment QR Code" class="w-40 h-40 sm:w-48 sm:h-48 mb-4 rounded-lg border border-emerald-400/30 object-contain bg-black/40">
-                            <p class="text-gray-300 text-center mb-4 text-sm sm:text-base">Scan the QR using PhonePe / GPay</p>
-                            <p class="text-emerald-400 font-['JetBrains_Mono'] text-center text-base sm:text-lg">Amount: ₹19</p>
-                        </div>
-                        <div>
-                            <label for="transaction" class="block mb-2 text-gray-300 text-sm sm:text-base">Transaction ID</label>
-                            <input type="text" id="transaction" required class="w-full mb-4 px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500 text-sm sm:text-base">
-                        </div>
-                        <div>
-                            <label for="paymentss" class="block mb-2 text-gray-300 text-sm sm:text-base">Payment Screenshot</label>
-                            <input type="file" id="paymentss" required accept="image/png,image/jpeg,image/webp" class="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-emerald-400 transition-colors placeholder-gray-500 text-sm sm:text-base">
-                            <p class="text-xs text-gray-400 mt-1">Max size: 2 MB (PNG, JPG, WEBP)</p>
-                            <!-- Preview container -->
-                            <div id="screenshot-preview" class="hidden mt-4 p-3 bg-gray-800/50 rounded-lg border border-gray-700">
-                                <p class="text-xs text-gray-400 mb-2">Preview:</p>
-                                <img id="screenshot-preview-img" src="" alt="Screenshot preview" class="max-w-full h-auto max-h-48 rounded border border-emerald-400/30">
-                            </div>
-                        </div>
+                    <div class="text-center mt-8 p-4 bg-emerald-500/10 border border-emerald-400/30 rounded-lg">
+                        <p class="text-emerald-400 font-semibold">✨ This event is FREE! No payment required.</p>
                     </div>
 
                     <button type="submit" id="submit-btn" class="w-full px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base flex items-center justify-center gap-2">
@@ -316,7 +276,7 @@
                 <div id="success-message" class="hidden text-center py-10">
                     <div class="text-6xl mb-6">🎉</div>
                     <h3 class="text-3xl font-bold mb-4 text-emerald-400">Registration Successful!</h3>
-                    <p class="text-xl mb-8">Your details have been recorded. We'll contact you soon.</p>
+                    <p class="text-xl mb-8">You're all set! Get ready for the GFG Guest Session on <span class="text-emerald-400 font-semibold">19 FEB 2026</span>. Join us online to explore Generative AI! 🚀</p>
                     <a href="index.html" class="inline-block px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
                         Back to Home
                     </a>
@@ -352,7 +312,91 @@
     </footer>
 
     <!-- Scripts -->
-    <!-- Registration is closed: remove Supabase/registration scripts to prevent client-side writes or exposing keys -->
-    <!-- If you need read-only features, re-add only the safe scripts. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabaseClient.js"></script>
+    
+    <!-- Form Submission Handler with Database Integration -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registrationForm = document.getElementById('registration-form');
+            const registrationSection = document.getElementById('registration-section');
+            const successMessage = document.getElementById('success-message');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const submitSpinner = document.getElementById('submit-spinner');
+
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show spinner
+                    submitBtn.disabled = true;
+                    submitText.classList.add('hidden');
+                    submitSpinner.classList.remove('hidden');
+
+                    try {
+                        // Get the GFG Guest Session event
+                        const { data: events, error: eventError } = await window.supabaseClient
+                            .from('events')
+                            .select('id')
+                            .eq('title', 'GFG Guest Session')
+                            .single();
+
+                        if (eventError || !events) {
+                            console.error('Event not found:', eventError);
+                            throw new Error('Event not found in database');
+                        }
+
+                        const eventId = events.id;
+
+                        // Collect form data
+                        const registrationData = {
+                            event_id: eventId,
+                            full_name: document.getElementById('name').value,
+                            gfg_id: document.getElementById('gfg_id').value,
+                            email: document.getElementById('email').value,
+                            prn: document.getElementById('roll').value,
+                            department: document.getElementById('department').value,
+                            year: document.getElementById('year').value,
+                            phone: document.getElementById('phone').value,
+                            registration_status: 'pending'
+                        };
+
+                        // Insert registration into database
+                        const { data, error } = await window.supabaseClient
+                            .from('event_registrations')
+                            .insert([registrationData]);
+
+                        if (error) {
+                            console.error('Registration error:', error);
+                            // Check if it's a duplicate registration
+                            if (error.code === '23505') {
+                                throw new Error('You have already registered with this email for this event!');
+                            }
+                            throw new Error('Failed to register: ' + error.message);
+                        }
+
+                        console.log('Registration successful:', data);
+                        
+                        // Hide form and show success message
+                        registrationForm.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('Registration failed: ' + error.message);
+                        
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitText.classList.remove('hidden');
+                        submitSpinner.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

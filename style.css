@@ -542,4 +542,17 @@ header .container > div > * {
   }
 }
 
+/* Event Popup Sliding Animation */
+#event-popup {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#event-popup.translate-x-full {
+    transform: translateX(100%);
+}
+
+#event-popup:not(.translate-x-full) {
+    transform: translateX(0);
+}
+
 

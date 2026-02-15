@@ -71,11 +71,14 @@ CREATE TABLE IF NOT EXISTS event_registrations (
     
     -- Default Fields
     full_name TEXT NOT NULL,
+    gfg_id TEXT,
     prn TEXT NOT NULL,
     email TEXT NOT NULL,
-    phone TEXT,
+    phone TEXT NOT NULL,
+    department TEXT,
+    year TEXT,
     
-    -- Payment Info
+    -- Payment Info (optional - for paid events)
     payment_screenshot_url TEXT,
     payment_verified BOOLEAN DEFAULT false,
     
@@ -267,9 +270,9 @@ ORDER BY e.event_date DESC;
 -- Sample Event
 INSERT INTO events (title, description, event_type, event_date, venue, requires_payment, payment_amount, is_visible, is_featured, is_draft)
 VALUES 
-    ('Web Development Workshop', 'Learn modern web development with React and Next.js', 'Workshop', 
-     NOW() + INTERVAL '7 days', 'Computer Lab A', true, 100.00, true, true, false);
+    ('GFG Guest Session', 'Understand What Generative AI is at a Basic Level, and its appropriate usage on a daily and professional level', 'Talk', 
+     '2026-02-19T10:00:00Z', 'Online', false, 0.00, true, false, false);
 
 COMMENT ON TABLE events IS 'Stores all GFG events with detailed configuration';
 COMMENT ON TABLE event_custom_fields IS 'Custom registration form fields for each event';
-COMMENT ON TABLE event_registrations IS 'User registrations for events with custom field responses';
+COMMENT ON TABLE event_registrations IS 'User registrations for events with custom field responses - includes name, GFG ID, PRN, email, phone, department, and year';
